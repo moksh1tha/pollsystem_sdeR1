@@ -1,102 +1,54 @@
-Live Polling System
-A real-time interactive polling platform built with React, TypeScript, and Socket.IO, designed for classrooms, training sessions, and live audience feedback.
+# Live Polling System
 
-Features
-Teacher Dashboard
-Create polls with custom multiple-choice options and timers
+A real-time interactive polling platform for classrooms, training, or live audience engagement. Built with React, TypeScript, Node.js, and Socket.IO.
 
-View real-time results with animated progress bars
+---
 
-Manage student connections (view, remove participants)
+## Features
 
-Access past poll history and analytics
+### Teacher Dashboard
+- Create multiple-choice polls with time limits (default: 60 seconds)
+- View real-time results with animated progress bars
+- Manage connected students (view/kick participants)
+- Access past poll results and analytics
+- Communicate through a built-in live chat
 
-Built-in chat to communicate with students
+### Student Dashboard
+- Join sessions easily by entering a name (per browser tab)
+- Submit answers within live time constraints
+- View poll results immediately after submission
+- Chat with the teacher and fellow students
+- Session persists across tab refreshes
 
-Student Dashboard
-Join easily by entering name (session persists per tab)
+### System Highlights
+- Real-time updates powered by Socket.IO
+- Responsive UI for desktop and mobile
+- Automatic handling of joins, leaves, and disconnections
 
-Participate in live polls with time limits
+---
 
-See real-time results after submission
+## Technology Stack
 
-Chat with teacher and other students
+### Frontend
+- React 18
+- TypeScript
+- Tailwind CSS
+- Lucide React
+- Socket.IO Client
 
-System Highlights
-Real-time updates using WebSockets (Socket.IO)
+### Backend
+- Node.js
+- Express.js
+- Socket.IO
+- CORS
 
-Fully responsive UI for all devices
+---
 
-Automatic connection and disconnection handling
+## Architecture Overview
 
-Tech Stack
-Frontend
-React 18
+- **Client-Server Model**: Real-time communication via WebSockets
+- **Data Flow**:
+  - Teacher creates a poll → Server broadcasts it to students
+  - Students submit answers → Server updates and pushes results in real-time
+  - Results saved to poll history for later viewing
 
-TypeScript
-
-Tailwind CSS
-
-Lucide React
-
-Socket.IO Client
-
-Backend
-Node.js
-
-Express.js
-
-Socket.IO
-
-CORS
-
-Architecture
-Client-server model with WebSocket connections
-
-Teacher creates poll → Server broadcasts → Students respond
-
-Responses are updated live and stored in poll history
-
-Setup & Installation
-Prerequisites
-
-Node.js v16+
-
-npm or yarn
-
-Steps
-
-bash
-Copy
-Edit
-# Clone repository
-git clone <repository-url>
-
-# Install dependencies
-npm install
-
-# Start both frontend and backend
-npm start
-Development
-
-bash
-Copy
-Edit
-npm run server    # Start backend  
-npm run dev       # Start frontend  
-Deployment
-Frontend: Netlify, Vercel, or any static host
-
-Backend: Railway, Heroku, or any Node.js platform
-
-Browser Support
-Compatible with Chrome, Firefox, Safari, Edge, and major mobile browsers.
-
-Security Features
-Session-based WebSocket connections
-
-Input sanitization
-
-CORS policies
-
-Connection limits to prevent spamming
